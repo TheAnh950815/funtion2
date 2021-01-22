@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="feet" type="number" placeholder="feet"
+       oninput="moveFeetMeters(this.value)"
+       onchange="moveFeetMeters(this.value)">
+<p id="result"></p>
+<input id="meters" type="number" placeholder="meters"
+       oninput="moveMetersFeet(this.value)"
+       onchange="moveMetersFeet(this.value)">
+<p id="result1"></p>
+
+</body>
+</html>
+<script>
+    function moveFeetMeters(feet) {
+        meters = feet * 0.305
+        document.getElementById('result').innerHTML = meters + ' ' + 'm'
+    }
+
+    function moveMetersFeet(meters) {
+        feet = meters * 3.279
+        document.getElementById('result1').innerHTML = feet + ' ' +'ft'
+    }
+</script>

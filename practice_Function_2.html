@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="result">   </p><br>
+<input type="number" placeholder="square"
+       oninput="square(this.value)"
+       onchange="square(this.value)"><br>
+<input type="number" placeholder="circle area"
+       oninput="calculateCircleArea(this.value)"
+       onchange="calculateCircleArea(this.value)"><br>
+<input type="number" placeholder="Diameter area"
+       oninput="calculateDiameterCircle(this.value)"
+       onchange="calculateDiameterCircle(this.value)"><br>
+<input type="number" id="fact1" placeholder="factorials"
+       oninput="factorial(this.value)"
+       onchange="factorial(this.value)"><br>
+<input type="text" placeholder="check Number"
+       oninput="checkNumber(this.value)"
+       onchange="checkNumber(this.value)"><br>
+<input type="button" value="findMax" onclick="findMax()"><br>
+<input type="text" placeholder="checkInteger"
+       oninput="checkInteger(this.value)"
+       onchange="checkInteger(this.value)"><br>
+<input type="button" onclick="moveNumber()" value="move Number"><br>
+
+</body>
+</html>
+<script>
+        function square(x) {
+            a = x * x
+            document.getElementById("result").innerHTML = a
+        }
+
+        function calculateCircleArea(r) {
+            Area = 3.14 * r * r
+            document.getElementById("result").innerHTML = Area
+        }
+
+        function calculateDiameterCircle(r) {
+            Diameter = 3.14 * r * 2
+            document.getElementById("result").innerHTML = Diameter
+        }
+
+        function factorial(num) {
+            var factorialResult = 1;
+            for (var i = 1; i <= num; i++) {
+                factorialResult *= i;
+            }
+            document.getElementById("result").innerHTML = factorialResult;
+        }
+
+        function checkNumber(num) {
+            if (isNaN(num)) {
+                document.getElementById("result").innerHTML = 'true' + "<br/>";
+            } else {
+                document.getElementById("result").innerHTML = 'false' + "<br/>";
+            }
+        }
+
+        checkNumber();
+
+        function findMax(a, b, c) {
+            a = prompt()
+            b = prompt()
+            c = prompt()
+            if (a > b) {
+                document.getElementById("result").innerHTML = "max=" + a
+            } else if (b > c) {
+                document.getElementById('result').innerHTML = "max=" + b
+            } else {
+                document.getElementById('result').innerHTML = "max=" + c
+            }
+        }
+
+        function checkInteger(number) {
+            if (number < 0) {
+                document.getElementById("result").innerHTML = 'false' + "<br/>";
+            } else {
+                document.getElementById("result").innerHTML = 'true' + "<br/>";
+            }
+        }
+
+        function moveNumber(a, b) {
+            a = prompt()
+            b = prompt()
+            var array = [a, b]
+            c = array.reverse().join("")
+            document.getElementById("result").innerHTML = c + "<br/>";
+        }
+
+
+</script>

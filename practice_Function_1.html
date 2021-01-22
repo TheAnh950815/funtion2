@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" onclick="practice_Function()" value="click heer"><br>
+<p id="result"></p>
+</body>
+</html>
+<script>
+        function alertMessage() {
+            alert("Xin Chào!")
+        }
+
+        function increaseFunction(number) {
+            if (number == 10) {
+                return 10;
+            }
+            return number * increaseFunction(number + 1);
+        }
+        document.getElementById('result').innerHTML = increaseFunction(1)
+
+     let a = parseInt(prompt("Nhập Số",""))
+     let b = parseInt(prompt("Nhập số",""))
+     function parameter(a, b) {
+         if (a > b) {
+             alert(a + ' ' + "lớn hơn" + ' ' + b);
+         } else if (a <= b) {
+             let c = a + b
+             alert(c);
+         } else {
+         }
+     }
+
+     parameter(a, b);
+
+        function addNumbers() {
+            firstNum = 4;
+            secondNum = 8;
+            result = firstNum + secondNum;
+
+            return result;
+        }
+        result = 0;
+        alert(result)
+        result = addNumbers();
+        alert(result);
+    let nameStar = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus']
+    let constellation = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo']
+
+    function findConstellation() {
+        let a= prompt("Nhập tên ngôi Sao","")
+        if (nameStar.indexOf(a) == -1){
+            alert("không tìm thấy");
+        } else {
+            document.write(constellation[nameStar.indexOf(a)])
+        }
+            }
+            findConstellation();
+</script>

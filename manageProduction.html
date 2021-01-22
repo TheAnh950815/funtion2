@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    tr:nth-child(odd) {
+        background-color: lightgrey;
+    }
+</style>
+<body>
+<input id="nhap" style="height: 20px;width: 300px" placeholder="Nhập sản phẩm">
+<button style="background: limegreen" onclick="add()">Add</button>
+<p id="demo"></p>
+</body>
+</html>
+<script>
+    var
+        arr =[]
+    creatTable();
+    function creatTable() {
+        var table ;
+        table = "<table>";
+        for (i =0 ; i < arr.length ; i++) {
+            table = table + "<tr>";
+            table = table + "<td style='width: 247px'>"+ arr[i] + "</td>";
+            table = table + "<td>"+ "<button style='background: limegreen' onclick='edit("+i+")'>Edit</button>" + "</td>";
+            table = table + "<td>"+ "<button style='background: limegreen' onclick='del("+i+")'>Delete</button>" + "</td>";
+            table = table + "</tr>";
+        }
+        table =table + "</table>"
+        document.getElementById("demo").innerHTML = table;
+    }
+    function edit(i) {
+        arr.splice(i,1,prompt("sửa"));
+        creatTable();
+    }
+    function del(i) {
+        arr.splice(i,1);
+        creatTable();
+    }
+    function add() {
+        if(document.getElementById("nhap").value.trim() === "") {
+        }else {
+            arr.push(document.getElementById("nhap").value)
+            creatTable();
+        }
+    }
+</script>

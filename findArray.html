@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="result"></p><br>
+<input type="button" onclick="findArray()" value="move Array"><br>
+</body>
+</html>
+<script>
+    function findArray(array) {
+        array = prompt()
+        a = prompt()
+        count = 0
+        check=true
+        console.log(array)
+        for (i = 0; i < array.length; i++) {
+            if (array[i] == a){
+                count++
+            console.log(array.length)
+            document.getElementById("result").innerHTML = count + "<br/>";
+            }
+            }if (count!=0) {
+            check = false
+        } else if (check) {
+            document.getElementById("result").innerHTML = "-1" + "<br/>";
+        }
+    }
+</script>
